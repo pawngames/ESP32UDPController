@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/joypad/joypad.gd" type="Script" id=1]
+[ext_resource path="res://src/joypad/stick.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/joypad/stick.gd" type="Script" id=3]
+
+[node name="joypad" type="Control"]
+anchor_left = -0.13
+anchor_top = -0.232
+anchor_right = 0.132
+anchor_bottom = 0.22
+margin_left = -3.87999
+margin_top = 2.20001
+margin_right = 2.832
+margin_bottom = 5.99998
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 275, 275 )
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="left_stick" parent="." instance=ExtResource( 2 )]
+position = Vector2( 137, 137 )
+script = ExtResource( 3 )
+
+[node name="right_stick" parent="." instance=ExtResource( 2 )]
+position = Vector2( 887, 137 )
+script = ExtResource( 3 )
+[connection signal="control_signal" from="left_stick" to="." method="_on_left_stick_control_signal"]
+[connection signal="control_signal" from="right_stick" to="." method="_on_right_stick_control_signal"]

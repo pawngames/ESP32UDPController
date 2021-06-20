@@ -1,0 +1,4 @@
+#Sun Jun 20 18:05:19 BRT 2021
+base.0=/media/jmtstorres/Dados/Projetos/Jogos/Esp32UDPJoy/android/build/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

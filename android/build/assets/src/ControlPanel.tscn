@@ -1,0 +1,114 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://src/Controller.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/ControlPanel.gd" type="Script" id=2]
+[ext_resource path="res://assets/textures/panel.png" type="Texture" id=3]
+[ext_resource path="res://assets/textures/ball.png" type="Texture" id=4]
+[ext_resource path="res://assets/fonts/Audiowide_Regular.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 5 )
+
+[node name="ControlPanel" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 4 )
+
+[node name="SpritePanelBg" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+texture = ExtResource( 3 )
+
+[node name="CenterContainer" parent="." instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 300.0
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="SignalBar" type="ProgressBar" parent="."]
+margin_left = 44.0
+margin_top = 33.0
+margin_right = 287.0
+margin_bottom = 107.0
+min_value = -100.0
+max_value = 0.0
+value = -100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelTemp" type="Label" parent="."]
+margin_left = 711.0
+margin_top = 40.0
+margin_right = 878.0
+margin_bottom = 110.0
+custom_fonts/font = SubResource( 1 )
+text = "Temp C"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelSignal" type="Label" parent="."]
+margin_left = 80.1763
+margin_top = 99.4905
+margin_right = 247.176
+margin_bottom = 169.49
+custom_fonts/font = SubResource( 2 )
+text = "Signal"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelThrottle" type="Label" parent="."]
+margin_left = 884.103
+margin_top = 219.649
+margin_right = 1001.1
+margin_bottom = 252.649
+custom_fonts/font = SubResource( 3 )
+text = "Throttle"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Throttlebar" type="ProgressBar" parent="."]
+margin_left = 907.26
+margin_top = 207.0
+margin_right = 1074.26
+margin_bottom = 276.0
+rect_rotation = -89.9999
+step = 1.0
+rounded = true
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
